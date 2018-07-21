@@ -1,3 +1,13 @@
-<div>
-    woeid is :  {{woeid}}
+<div >
+        <div class="card" style="width: 18rem;">
+                <img class="card-img-top" ng-src="https://www.metaweather.com/static/img/weather/{{inf.consolidated_weather[0].weather_state_abbr}}.svg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{inf.title}}</h5>
+                  <p class="card-text">
+                        Temperature : {{temp | number:1}}<br>  
+                        Min temperature  :     {{inf.consolidated_weather[0].min_temp | number:1}} <br>  
+                        Max temperature  :     {{inf.consolidated_weather[0].max_temp | number:1}}<br>  </p>
+                  <a href="/#!/#weather/{{woeid}}" class="btn btn-primary">Details</a>
+                </div>
+        </div>
 </div>

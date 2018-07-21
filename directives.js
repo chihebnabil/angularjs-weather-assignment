@@ -16,9 +16,11 @@
          },
         controller:function($scope){
             $http({method: 'GET', url:"http://assignangular.test/weather.php?command=location&woeid="+$scope.woeid}).then(function (result) {
-                console.log(result.data);                              
+                console.log(result.data.consolidated_weather[0].the_temp);    
+                $scope.temp =  result.data.consolidated_weather[0].the_temp 
+                $scope.inf =  result.data                        
              }, function (result) {
-                 alert("Error: No data returned");
+               //  alert("Error: No data returned");
              });
         },
         link: function(scope, elem, attrs, ctrl) {

@@ -1,0 +1,19 @@
+<div class="row justify-content-md-center">
+
+        <form ng-submit="submit()">
+        <div class="form-group">
+          <label for="search">Seach</label>
+          <input type="text" ng-model="keyword" class="form-control" id="search"  placeholder="Enter keyword">
+          <small id="emailHelp" class="form-text text-muted">Please enter your city name.</small>
+        </div>
+
+        </form>
+
+    </div>
+
+
+    <div class="row" ng-show="error">
+            <div class="alert alert-danger" role="alert">
+                    No results were found. Try changing the keyword!
+           </div>
+    </div>

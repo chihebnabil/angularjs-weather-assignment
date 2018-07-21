@@ -17,6 +17,11 @@
       controller: 'MainController',
       controllerAs: 'main'
     })
+    .when('/search/:keyword', {
+      templateUrl: 'views/search.html',
+      controller: 'SearchController',
+      controllerAs: 'search'
+    })
     .otherwise({
       redirectTo: '/'
     });

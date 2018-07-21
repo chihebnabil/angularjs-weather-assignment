@@ -27,6 +27,11 @@
       controller: 'SearchController',
       controllerAs: 'search-params'
     })
+    .when('/weather/:woeid', {
+      templateUrl: 'views/city.html',
+      controller: 'CityController',
+      controllerAs: 'city'
+    })
     .otherwise({
       redirectTo: '/'
     });

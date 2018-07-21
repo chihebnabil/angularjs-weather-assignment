@@ -2,6 +2,8 @@
  
     angular.module('app').controller('MainController', MainController);
     angular.module('app').controller('SearchController', SearchController);
+    angular.module('app').controller('CityController', CityController);
+
     MainController.$inject = ['$scope', '$http'];
     SearchController.$inject = ['$scope', '$http',"$location","$routeParams"];
     
@@ -23,7 +25,6 @@
         }
         
         if($routeParams.keyword !== ""){
-            console.log("route params",$routeParams.keyword )
             KeywordSearch($routeParams.keyword)
 
         }
@@ -48,9 +49,28 @@
         }
 
 
+     }
+
+     function CityController($scope,$routeParams, $http){
+    
+        if($routeParams.woeid !== ""){
+            getDetails($routeParams.woeid)
+
+        }
+
+        function getDetails(woeid) {
+            $http({method: 'GET', url:"http://assignangular.test/weather.php?command=location&woeid="+woeid}).then(function (result) {
+                $scope.inf =  result.data       
+                console.log(result.data )                 
+             }, function (result) {
+             });
+        }
 
 
      }
+
+
+
 
  
 })();

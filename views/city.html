@@ -1,0 +1,25 @@
+<div class="row">
+    <h2>Weather in {{inf.title}} </h2>
+</div>
+<div class="row">
+      <div ng-repeat="i in inf.consolidated_weather" class="card" style="width: 18rem;">
+                <img class="card-img-top" ng-src="https://www.metaweather.com/static/img/weather/{{i.weather_state_abbr}}.svg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{ i.applicable_date }}</h5>
+                  <p class="card-text">
+                        Temperature : {{i.the_temp | number:1}}<br>  
+                        Min temperature  :     {{i.min_temp | number:1}} <br>  
+                        Max temperature  :     {{i.max_temp | number:1}}<br> 
+                        Humidity  :     {{i.humidity | number:1}}<br>
+                        Predictability  :     {{i.predictability | number:1}}<br>
+                        visibility  :     {{i.visibility | number:1}}<br>
+                        Wind direction  :     {{i.wind_direction | number:1}}<br>
+                        Wind direction Compass  :     {{i.wind_direction_compass}}<br>
+                        Wind Speed  :     {{i.wind_speed | number:1}}<br>
+
+
+
+                    </p>
+                </div>
+        </div>
+</div>
